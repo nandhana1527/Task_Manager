@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>TaskNest - Personal Task Manager</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            TASKNEST
+        </div>
+
+        <p>
+            Personal To-Do and Task Manager
+        </p>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <button onclick="showSection('dashboard')">
+            Dashboard
+        </button>
+
+        <button onclick="showSection('lists')">
+            My Lists
+        </button>
+
+        <button onclick="showSection('overdue')">
+            Overdue
+        </button>
+
+    </nav>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard"
+                 class="section active">
+
+            <h1>
+                Dashboard
+            </h1>
+
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Lists
+                    </h3>
+
+                    <p id="totalLists">
+                        0
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Total Tasks
+                    </h3>
+
+                    <p id="totalTasks">
+                        0
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Completed
+                    </h3>
+
+                    <p id="completedTasks">
+                        0
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Overdue
+                    </h3>
+
+                    <p id="overdueTasks">
+                        0
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="welcome">
+
+                <h2>
+                    Welcome to TaskNest 👋
+                </h2>
+
+                <p>
+                    Organize your academics, personal
+                    tasks, projects and club work in one place.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= LISTS ================= -->
+
+        <section id="lists"
+                 class="section">
+
+            <div class="section-header">
+
+                <h1>
+                    My Task Lists
+                </h1>
+
+                <button onclick="openListForm()">
+                    + Create List
+                </button>
+
+            </div>
+
+
+            <div id="listContainer"
+                 class="list-container">
+
+                <p>
+                    Loading lists...
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= TASKS ================= -->
+
+        <section id="tasks"
+                 class="section">
+
+            <div class="section-header">
+
+                <h1 id="selectedListName">
+                    Tasks
+                </h1>
+
+                <button onclick="openTaskForm()">
+                    + Add Task
+                </button>
+
+            </div>
+
+
+            <div id="taskContainer"
+                 class="task-container">
+
+                <p>
+                    Select a list to view tasks.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= OVERDUE ================= -->
+
+        <section id="overdue"
+                 class="section">
+
+            <h1>
+                Overdue Tasks
+            </h1>
+
+
+            <div id="overdueContainer"
+                 class="task-container">
+
+                <p>
+                    Loading overdue tasks...
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= CREATE LIST MODAL ================= -->
+
+    <div id="listModal"
+         class="modal">
+
+        <div class="modal-content">
+
+            <span class="close"
+                  onclick="closeListForm()">
+                &times;
+            </span>
+
+            <h2>
+                Create Task List
+            </h2>
+
+
+            <input
+                type="text"
+                id="listName"
+                placeholder="Enter list name"
+            >
+
+
+            <button onclick="createList()">
+                Create List
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= CREATE TASK MODAL ================= -->
+
+    <div id="taskModal"
+         class="modal">
+
+        <div class="modal-content">
+
+            <span class="close"
+                  onclick="closeTaskForm()">
+                &times;
+            </span>
+
+            <h2>
+                Add New Task
+            </h2>
+
+
+            <label>
+                Task Title
+            </label>
+
+            <input
+                type="text"
+                id="taskTitle"
+                placeholder="Enter task title"
+            >
+
+
+            <label>
+                Due Date
+            </label>
+
+            <input
+                type="date"
+                id="taskDueDate"
+            >
+
+
+            <label>
+                Priority
+            </label>
+
+            <select id="taskPriority">
+
+                <option value="LOW">
+                    LOW
+                </option>
+
+                <option value="MEDIUM">
+                    MEDIUM
+                </option>
+
+                <option value="HIGH">
+                    HIGH
+                </option>
+
+            </select>
+
+
+            <button onclick="createTask()">
+                Add Task
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

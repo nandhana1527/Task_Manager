@@ -29,10 +29,7 @@ public class TaskList {
     @JsonIgnore
     private User user;
 
-    @OneToMany(
-            mappedBy = "taskList",
-            cascade = CascadeType.ALL
-    )
+    @OneToMany(mappedBy = "taskList", cascade = CascadeType.ALL)
     private List<Task> tasks = new ArrayList<>();
 
     public TaskList() {
@@ -54,6 +51,7 @@ public class TaskList {
         this.name = name;
     }
 
+    @JsonIgnore
     public User getUser() {
         return user;
     }

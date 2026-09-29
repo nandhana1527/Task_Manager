@@ -1,4 +1,3 @@
-
 package com.personal.entity;
 
 public enum Priority {

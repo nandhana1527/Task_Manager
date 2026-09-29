@@ -44,6 +44,10 @@
             My Lists
         </button>
 
+        <button onclick="showSection('today')">
+            Today
+        </button>
+
         <button onclick="showSection('overdue')">
             Overdue
         </button>
@@ -193,6 +197,27 @@
 
                 <p>
                     Select a list to view tasks.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TODAY ================= -->
+
+        <section id="today"
+                 class="section">
+
+            <h1>
+                Tasks Due Today
+            </h1>
+
+            <div id="todayContainer"
+                 class="task-container">
+
+                <p>
+                    Loading today's tasks...
                 </p>
 
             </div>
